@@ -1,0 +1,21 @@
+<div class="animes" >
+    <!-- <ng-container > -->
+      <div class="anime" *ngFor="let anime of AnimeItem">
+        <div class="anime-thumb-container">
+          <img
+            src="{{anime.cover_image}}"
+            alt="thumbnail"
+            class="anime-thumbnail"
+          />
+        </div>
+        <div class="anime-description">
+          <p class="anime-name">{{anime.titles.en}}</p>
+          <p class="anime-date">{{anime.season_year}}</p>
+          <div class="anime-platforms">
+          
+          </div>
+        </div>
+      </div>
+    <!-- </ng-container> -->
+  </div>
+  
