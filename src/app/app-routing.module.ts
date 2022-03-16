@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'search/:search',
-    component: HomeComponent
+    component: HomeComponent,
   }
 ];
 

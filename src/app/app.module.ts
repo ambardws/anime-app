@@ -17,6 +17,7 @@ import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { FilterAnimeComponent } from './components/filter-anime/filter-anime.component';
 import { AnimeItemComponent } from './pages/home/anime-item/anime-item.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AnimeItemComponent } from './pages/home/anime-item/anime-item.component
     MatIconModule,
     MatSelectModule,
     MatTabsModule,
+    MatPaginatorModule,
     GaugeModule.forRoot()
   ],
   providers: [

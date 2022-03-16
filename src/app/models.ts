@@ -25,6 +25,9 @@ export interface Anime {
 
 export interface ResponseModel {
     data: {
+        current_page: number,
+        count: number,
         documents : Array<Anime>;
+        last_page: number
     } 
 }

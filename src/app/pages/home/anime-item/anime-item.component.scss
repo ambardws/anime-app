@@ -6,10 +6,21 @@
     margin: 20px auto;
 }
 
+.pagination {
+    width: 30%;
+    margin: 0 auto;
+
+    .mat-paginator {
+        background-color: #D1D1D1;
+        font-weight: bold;
+        color: #000;
+    }
+}
+
 .anime {
     width: 220px;
     margin: 10px;
-    height: 500px;
+    height: 450px;
     overflow: hidden;
     border-radius: 5px;
     background-color: #202020;

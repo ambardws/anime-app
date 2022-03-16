@@ -9,9 +9,15 @@ import { Anime } from 'src/app/models';
 export class AnimeItemComponent implements OnInit {
 
   @Input() AnimeItem: Anime[] = [];
-  @Input () AnimeItemSearch: Anime[] = [];
+  @Input() length!: number;
+  @Input() pageSize!: number;
+  @Input() currentPage!: number;
 
   constructor() { }
+
+  onPage(page: number) {
+    console.log(page)
+  }
 
   ngOnInit(): void {
   }

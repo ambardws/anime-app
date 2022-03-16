@@ -1,2 +1,2 @@
-<app-filter-anime></app-filter-anime>
-<app-anime-item [AnimeItem]=animes></app-anime-item>
+<app-filter-anime (filter)="filter($event)"></app-filter-anime>
+<app-anime-item [AnimeItem]=animes [length]=count [pageSize]=pageSize [currentPage]=currentPage></app-anime-item>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-filter-anime',
@@ -6,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-anime.component.scss']
 })
 export class FilterAnimeComponent implements OnInit {
-  public sort: string = '';
+  public sort!: number;
+  @Output() filter = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private httpServices: HttpService) { }
 
   ngOnInit(): void {
+  }
+
+  filterAnimes(sort: number): void {
+    // this.httpServices.currentStatus.subscribe(sort => this.sort = sort)
+    // this.httpServices.changeStatus(sort)
+    this.filter.emit(sort)
   }
 
 }
