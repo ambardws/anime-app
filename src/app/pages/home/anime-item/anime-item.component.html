@@ -1,10 +1,16 @@
-<div class="pagination">
-  <mat-paginator [length]="length" [pageSize]="pageSize" aria-label="Select page" (page)="onPage(currentPage)">
+<!-- <div class="pagination">
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    aria-label="Select page"
+    (page)="onPage(currentPage)"
+  >
   </mat-paginator>
-</div>
+</div> -->
+
+
 <div class="animes">
-  <!-- <ng-container > -->
-  <div class="anime" *ngFor="let anime of AnimeItem">
+  <div class="anime" *ngFor="let anime of AnimeItem" (click)="openAnimeDetails(anime.id)">
     <div class="anime-thumb-container">
       <img
         src="{{ anime.cover_image }}"
@@ -18,5 +24,4 @@
       <div class="anime-platforms"></div>
     </div>
   </div>
-  <!-- </ng-container> -->
 </div>

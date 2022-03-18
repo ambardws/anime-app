@@ -1,0 +1,17 @@
+<div class="anime-tabs">
+  <mat-tab-group mat-align-tabs="start" backgroundColor="primary">
+    <mat-tab label="About">
+      <p class="anime-tabs-par">Total Episode : {{ anime.episodes_count }}</p>
+      <div class="anime-description" [innerHTML]="anime.descriptions.en"></div>
+    </mat-tab>
+    <mat-tab label="Trailers">
+      <iframe
+        class="anime-trailer"
+        width="600"
+        height="500"
+        [src]="anime.trailer_url | safe"
+      >
+      </iframe>
+    </mat-tab>
+  </mat-tab-group>
+</div>

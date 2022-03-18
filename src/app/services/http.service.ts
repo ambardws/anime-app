@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment as env } from 'src/environments/environment';
-import { ResponseModel } from '../models';
+import { ResponseModel, ResponseModelDetail } from '../models';
 
 
 @Injectable({
@@ -25,10 +25,6 @@ export class HttpService {
     sort?: number,
     search?: string,
   ): Observable<ResponseModel> {
-    // console.log(sort)
-    // let params = new HttpParams().set('formats', sort);
-    console.log(sort)
-    console.log(search);
     if (search) {
       let params = new HttpParams().set('title', search);
       return this.http.get<ResponseModel>(`${env.BASE_URL}/anime`,{
@@ -42,5 +38,9 @@ export class HttpService {
     } else {
       return this.http.get<ResponseModel>(`${env.BASE_URL}/anime`);
     }
+  }
+
+  getAnimeDetails(id: number): Observable<ResponseModelDetail> {
+    return this.http.get<ResponseModelDetail>(`${env.BASE_URL}/anime/${id}`)
   }
 }

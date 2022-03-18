@@ -13,7 +13,6 @@ export class SearchBarComponent implements OnInit {
 
   constructor(private router: Router, private httpServices: HttpService) { }
 
-  // @Output() animesitemsearch = new EventEmitter<string>()
   public animesitemsearch: Anime[] = [];
 
 
@@ -21,10 +20,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    // this.httpServices.getAnimeList(form.value.search).subscribe(AnimeList => {
-    //   console.log('1')
-    //   this.animesitemsearch = AnimeList.data.documents;
-    // })
     this.router.navigate(['search', form.value.search], {skipLocationChange: true});
   }
 

@@ -3,10 +3,10 @@ export interface Anime {
     banner_image: string;
     cover_color: string;
     cover_image: string;
-    description: any;
+    descriptions: any;
     end_date: Date;
     episode_duration: number;
-    episode_count: number;
+    episodes_count: number;
     format: number;
     genres: any;
     has_cover_image: boolean;
@@ -30,4 +30,8 @@ export interface ResponseModel {
         documents : Array<Anime>;
         last_page: number
     } 
+}
+
+export interface ResponseModelDetail {
+    data: Anime
 }

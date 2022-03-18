@@ -1,0 +1,39 @@
+<div class="details">
+  <div class="anime-banner">
+    <img
+      src="{{ animes.banner_image }}"
+      alt="background image"
+      class="anime-banner-img"
+    />
+  </div>
+  <div class="anime-content">
+    <div class="details-wrapper">
+      <div class="anime-header">
+        <h1 class="anime-header-title">{{ animes.titles.en }}</h1>
+        <h2 class="anime-header-release-date">
+          Release : {{ animes.season_year }}
+        </h2>
+        <p class="anime-header-genres">
+          <span *ngFor="let genre of animes.genres; let last = last"
+            >{{ genre }}<span *ngIf="!last">, </span></span
+          >
+        </p>
+      </div>
+      <div class="anime-gauge">
+        <mwl-gauge
+          class="two"
+          [max]="100"
+          [dialStartAngle]="180"
+          [dialEndAngle]="0"
+          [value]="animes.score"
+          [animated]="true"
+          [color]="getColor"
+          [animationDuration]="2"
+        >
+        </mwl-gauge>
+        <p class="anime-gauge-label">Score</p>
+      </div>
+      <app-anime-tab [anime]="animes"></app-anime-tab>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Anime } from 'src/app/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-anime-item',
@@ -13,7 +14,11 @@ export class AnimeItemComponent implements OnInit {
   @Input() pageSize!: number;
   @Input() currentPage!: number;
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  openAnimeDetails(id: number) {
+    this.router.navigate(['details', id])
+  }
 
   onPage(page: number) {
     console.log(page)
